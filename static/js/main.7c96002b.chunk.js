@@ -1,2 +1,0 @@
-(this["webpackJsonpinteractive-budget"]=this["webpackJsonpinteractive-budget"]||[]).push([[0],{9:function(e,t,n){"use strict";n.r(t);var s=n(0);var c=function(){return Object(s.jsx)("div",{className:"App",children:"asdasdasdasd"})},a=n(1),r=n.n(a),d=n(3);n.n(d).a.render(Object(s.jsx)(r.a.StrictMode,{children:Object(s.jsx)(c,{})}),document.getElementById("root"))}},[[9,1,2]]]);
-//# sourceMappingURL=main.7c96002b.chunk.js.map
