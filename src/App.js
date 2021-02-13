@@ -1,10 +1,17 @@
-import Wizzard from './Components/Wizzard';
+import React, { useReducer } from 'react';
+
+import Wizzard from './components/Wizzard';
+
+const { initialState, reducer, AppContext } = require('./storage/reducers');
 
 const App = () => {
+  let [state, dispatch] = useReducer(reducer, initialState);
+  let value = { state, dispatch };
+
   return (
-    <div className="App">
+    <AppContext.Provider value={value}>
       <Wizzard />
-    </div>
+    </AppContext.Provider>
   );
 }
 
