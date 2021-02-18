@@ -22,7 +22,6 @@ const SectionWizard = ({ content }) => {
       phone: state.phone,
       budget: state.budget
     }
-    console.log(data)
   }
 
   return (

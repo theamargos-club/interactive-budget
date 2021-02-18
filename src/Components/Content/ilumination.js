@@ -1,18 +1,28 @@
-import React, { useState } from 'react';
+import * as Image from '../../utils/images/indeximg'
 
+import React, { useContext, useEffect, useState } from 'react';
+
+import { AppContext } from '../../storage/reducers';
 import ImageCustom from './ImageCustom';
 import InputCustom from './InputCustom';
 import _ from 'lodash';
+import { updateBudget } from '../../storage/actions';
 
 const Ilumination = () => {
 
+    const { state, dispatch } = useContext(AppContext);
+
     const [numberZones, setNumberZones] = useState(0)
-    const [json, setJson] = useState([])
+    const [jsonInputs, setJsonInputs] = useState([])
+    const [jsonImg, setJsonImg] = useState([])
 
+    useEffect(() => {
+        setJsonImg(buildJsonImage())
+    }, [])
 
-    const onChange2 = e => {
+    const onChange = e => {
         let value = e.target.value
-        let jsonBuild = json
+        let jsonBuild = jsonInputs
         let jsonUpdate = []
         if (e.target.id.toString() === "1") {
             setNumberZones(value)
@@ -27,7 +37,7 @@ const Ilumination = () => {
                 jsonUpdate.push(item)
             }
         })
-        setJson(jsonUpdate)
+        setJsonInputs(jsonUpdate)
     }
 
     const buildJson = numberZones => {
@@ -54,32 +64,32 @@ const Ilumination = () => {
     }
 
     const onClick = e => {
-        console.log(e.target.value)
+        dispatch(updateBudget(e.target.id))
     }
 
     const buildJsonImage = () => {
         let jsonResponse = []
-        jsonResponse.push({title: "Entry Level US$50.00-US$100.00 x interruptor", imgSrc: "../../utils/images/src1.png", onClick: {onClick}})
-        jsonResponse.push({title: "Mid Level US$100-US$150 x interruptor", imgSrc: "../../utils/images/src2.png", onClick: {onClick}})
-        jsonResponse.push({title: "Mid Level US$150.00-US$350.00 x interruptor", imgSrc: "../../utils/images/src3.png", onClick: {onClick}})
+        jsonResponse.push({id:"rb1", title: "Entry Level US$50.00-US$100.00 x interruptor", imgSrc:Image.IMG_ILUM_1})
+        jsonResponse.push({id:"rb2", title: "Mid Level US$100-US$150 x interruptor", imgSrc: Image.IMG_ILUM_2})
+        jsonResponse.push({id:"rb3", title: "Mid Level US$150.00-US$350.00 x interruptor", imgSrc: Image.IMG_ILUM_3})
         return jsonResponse;
     }
 
 
     const renderOptions = () => {
-        return json.map((item) => {
+        return jsonInputs.map((item) => {
             if (!item.isHidden && item.type === "input") {
-                return <InputCustom title={item.title} id={item.id} onChange={onChange2} />
+                return <InputCustom key={item.id} title={item.title} id={item.id} onChange={onChange} />
             }
             if (!item.isHidden && item.type === "image") {
-                return <ImageCustom title={item.title} id={item.id} json={buildJsonImage()}/>
+                return <ImageCustom key={item.id} title={item.title} id={item.id} json={jsonImg} onClick={onClick}/>
             }
         })
     }
 
     return (
         <div>
-            <InputCustom title="Cantidad de zonas" id={1} onChange={onChange2} />
+            <InputCustom title="Cantidad de zonas" id={1} onChange={onChange} />
             {numberZones > 0 && renderOptions()}
         </div>
     );

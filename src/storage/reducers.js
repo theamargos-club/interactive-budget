@@ -6,7 +6,7 @@ export const initialState = {
     name: undefined,
     email: undefined,
     phone: undefined,
-    budget: {},
+    budget: undefined,
     page: 1,
     option: 1
 }

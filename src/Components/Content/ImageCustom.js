@@ -1,12 +1,12 @@
 import React from 'react';
 
-const ImageCustom = ({ title, id, json }) => {
+const ImageCustom = ({ title, id, json, onClick }) => {
 
     const buildImages = () => {
         return json.map(item => {
-            return (<div div style={{ margin: "1%", width: "33%" }}>
-                <div><img src={item.imgSrc} /></div>
-                <div><input type="radio" name="radio" onClick={item.onClick} /> {item.title}  </div>
+            return (<div key={item.id} style={{ margin: "1%", width: "33%" }}>
+                <div><img src={item.imgSrc}/></div>
+                <div><input type="radio" id={item.id} name="radio" onClick={e => onClick(e)} /> {item.title}  </div>
             </div >)
         })
     }
