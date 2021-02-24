@@ -23,14 +23,9 @@ const Form = () => {
 
     return (
         <div>
-            <h1>Logo</h1>
-            <h2>Bienvenidos a nuestro cotizador interactivo</h2>
-            <h3>Datos Personales</h3>
-            <div>
-                <div style={{ margin: "1%" }}><input type="text" placeholder="Nombre" id="name" onChange={onChange} /></div>
-                <div style={{ margin: "1%" }}><input type="text" placeholder="Email" id="email" onChange={onChange} /></div>
-                <div style={{ margin: "1%" }}><input type="text" placeholder="Telefono" id="phone" onChange={onChange} /></div>
-            </div>
+            <div style={{ margin: "1%" }}><input type="text" placeholder="Nombre" id="name" onChange={onChange} /></div>
+            <div style={{ margin: "1%" }}><input type="text" placeholder="Email" id="email" onChange={onChange} /></div>
+            <div style={{ margin: "1%" }}><input type="text" placeholder="Telefono" id="phone" onChange={onChange} /></div>
         </div>
     );
 }

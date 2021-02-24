@@ -25,7 +25,7 @@ const SectionWizard = ({ content }) => {
   }
 
   return (
-    <div style={{ width: "50%", marginTop: "10%" }}>
+    <div>
       <div>{content}</div>
       <div style={{ display: "flex" }}>
         {state.page > 1 && <div style={{ margin: "1%" }}><button onClick={onPreviousPage}>Atras</button></div>}
