@@ -23,9 +23,18 @@ const Form = () => {
 
     return (
         <div>
-            <div style={{ margin: "1%" }}><input type="text" placeholder="Nombre" id="name" onChange={onChange} /></div>
-            <div style={{ margin: "1%" }}><input type="text" placeholder="Email" id="email" onChange={onChange} /></div>
-            <div style={{ margin: "1%" }}><input type="text" placeholder="Telefono" id="phone" onChange={onChange} /></div>
+            <div className="form-group">
+                <label for="inputName">Nombre y Apellido</label>
+                <input type="text" className="form-control" id="name" placeholder="Ingrese su Nombre y Apellido" onChange={onChange} />
+            </div>
+            <div className="form-group">
+                <label for="inputEmail">Email</label>
+                <input type="text" className="form-control" id="email" placeholder="Ingrese su Email" onChange={onChange} />
+            </div>
+            <div className="form-group">
+                <label for="inputPhone">Telefono</label>
+                <input type="text" className="form-control" id="phone" placeholder="Ingrese su Telefono" onChange={onChange} />
+            </div>
         </div>
     );
 }
