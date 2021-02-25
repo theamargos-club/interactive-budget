@@ -9,28 +9,7 @@ import OptionMenu from '../OptionMenu';
 import SectionWizzard from './sectionWizzard';
 
 const SectionWizard = () => {
-    const { state, dispatch } = useContext(AppContext);
-    const [page, setPage] = useState(1)
-
-    const onNextPage = () => {
-        setPage(page + 1)
-    }
-
-    const onPreviousPage = () => {
-        setPage(page - 1)
-    }
-
-    const onFinish = () => {
-        const data = {
-            name: state.name,
-            email: state.email,
-            phone: state.phone,
-            budget: state.budget
-        }
-
-        console.log(data)
-    }
-
+    const { state } = useContext(AppContext);
 
     return (
         <div>
