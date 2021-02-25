@@ -24,15 +24,15 @@ const Form = () => {
     return (
         <div>
             <div className="form-group">
-                <label for="inputName">Nombre y Apellido</label>
+                <label>Nombre y Apellido</label>
                 <input type="text" className="form-control" id="name" placeholder="Ingrese su Nombre y Apellido" onChange={onChange} />
             </div>
             <div className="form-group">
-                <label for="inputEmail">Email</label>
+                <label>Email</label>
                 <input type="text" className="form-control" id="email" placeholder="Ingrese su Email" onChange={onChange} />
             </div>
             <div className="form-group">
-                <label for="inputPhone">Telefono</label>
+                <label>Telefono</label>
                 <input type="text" className="form-control" id="phone" placeholder="Ingrese su Telefono" onChange={onChange} />
             </div>
         </div>

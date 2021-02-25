@@ -16,9 +16,9 @@ const SectionWizard = () => {
             <div style={{ display: "flex", justifyContent: "center" }}>
                 <div className="container">
                     <ul className="progressbar">
-                        <li className={state.page === 1 && "active"}>Datos Personales</li>
-                        <li className={state.page === 2 && "active"}>Servicios</li>
-                        <li className={state.page === 3 && "active"}>Presupuesto</li>
+                        <li className={state.page === 1 ? "active" : undefined}>Datos Personales</li>
+                        <li className={state.page === 2 ? "active" : undefined}>Servicios</li>
+                        <li className={state.page === 3 ? "active" : undefined}>Presupuesto</li>
                     </ul>
                 </div>
             </div>

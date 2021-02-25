@@ -1,5 +1,3 @@
-import * as Image from '../../utils/images/indeximg'
-
 import React, { useContext, useEffect, useState } from 'react';
 
 import { AppContext } from '../../storage/reducers';
@@ -69,9 +67,9 @@ const Ilumination = () => {
 
     const buildJsonImage = () => {
         let jsonResponse = []
-        jsonResponse.push({id:"rb1", title: "Entry Level US$50.00-US$100.00 x interruptor", imgSrc:Image.IMG_ILUM_1})
-        jsonResponse.push({id:"rb2", title: "Mid Level US$100-US$150 x interruptor", imgSrc: Image.IMG_ILUM_2})
-        jsonResponse.push({id:"rb3", title: "Mid Level US$150.00-US$350.00 x interruptor", imgSrc: Image.IMG_ILUM_3})
+        jsonResponse.push({id:"rb1", title: "Entry Level US$50.00-US$100.00 x interruptor", imgSrc:"https://i.ibb.co/fHjpytX/src1.png"})
+        jsonResponse.push({id:"rb2", title: "Mid Level US$100-US$150 x interruptor", imgSrc: "https://i.ibb.co/8N787p4/src2.png"})
+        jsonResponse.push({id:"rb3", title: "Mid Level US$150.00-US$350.00 x interruptor", imgSrc: "https://i.ibb.co/qdXdxTz/src3.png"})
         return jsonResponse;
     }
 

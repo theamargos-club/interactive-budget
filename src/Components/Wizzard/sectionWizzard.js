@@ -28,9 +28,9 @@ const SectionWizard = ({ content }) => {
     <div style={{ width: "50%", marginTop: "3%" }}>
       <div>{content}</div>
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
-        {state.page > 1 && <div style={{ margin: "1%" }}><button type="button" class="btn btn-primary" onClick={onPreviousPage}>Atras</button></div>}
-        {state.page < 3 && <div style={{ margin: "1%" }}><button type="button" class="btn btn-primary" onClick={onNextPage}>Siguiente</button></div>}
-        {state.page === 3 && <div style={{ margin: "1%" }}><button type="button" class="btn btn-primary" onClick={onFinish}>Finalizar</button></div>}
+        {state.page > 1 && <div style={{ margin: "1%" }}><button type="button" className="btn btn-primary" onClick={onPreviousPage}>Atras</button></div>}
+        {state.page < 3 && <div style={{ margin: "1%" }}><button type="button" className="btn btn-primary" onClick={onNextPage}>Siguiente</button></div>}
+        {state.page === 3 && <div style={{ margin: "1%" }}><button type="button" className="btn btn-primary" onClick={onFinish}>Finalizar</button></div>}
       </div>
     </div>
   );
