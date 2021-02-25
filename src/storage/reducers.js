@@ -12,47 +12,26 @@ export const initialState = {
 }
 
 export const reducer = (state = {}, action) => {
-    let response
-    switch (action.type) {
+  const { data, type } = action
+  switch (type) {
+    case actionTypes.UPDATE_NAME:
+      return {...state, name: data}
 
-        case actionTypes.UPDATE_NAME:
-            response = Object.assign({}, state, {
-                name: action.data,
-            });
-            return response;
+    case actionTypes.UPDATE_EMAIL:
+      return {...state, email: data}
 
-        case actionTypes.UPDATE_EMAIL:
-            response = Object.assign({}, state, {
-                email: action.data,
-            });
-            return response;
+    case actionTypes.UPDATE_PHONE:
+      return {...state, phone: data}
 
-        case actionTypes.UPDATE_PHONE:
-            response = Object.assign({}, state, {
-                phone: action.data,
-            });
-            return response;
+    case actionTypes.UPDATE_BUDGET:
+      return {...state, budget: data}
 
-        case actionTypes.UPDATE_BUDGET:
-            response = Object.assign({}, state, {
-                budget: action.data,
-            });
-            return response;
+    case actionTypes.UPDATE_PAGE:
+      return {...state, page: data}
 
-        case actionTypes.UPDATE_PAGE:
-            response = Object.assign({}, state, {
-                page: action.data,
-            });
-            return response;
-
-        case actionTypes.UPDATE_OPTION:
-            response = Object.assign({}, state, {
-                option: action.data,
-            });
-            return response
-
-
-
-
-    }
+    case actionTypes.UPDATE_OPTION:
+      return {...state, option: data}
+    default: 
+      return state
+  }
 };
