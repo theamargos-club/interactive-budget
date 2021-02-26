@@ -5,9 +5,9 @@ const ImageCustom = ({ title, id, json, onClick }) => {
   const buildImages = () => {
     return json.map(item => {
       return (
-        <div key={item.id} style={{ margin: "1%", width: "33%" }}>
+        <div key={item.id} className="img">
           <div>
-            <img alt="CustomImage" src={item.imgSrc} style={{ width: "100%" }}/>
+            <img alt="CustomImage" src={item.imgSrc} className="img-width"/>
           </div>
           <div>
             <input type="radio" id={item.id} name="radio" onClick={e => onClick(e)} /> 
@@ -20,7 +20,7 @@ const ImageCustom = ({ title, id, json, onClick }) => {
   return (
     <div>
       <label>{`${id} - ${title}`}</label>
-      <div style={{ display: "flex" }}>
+      <div className="content-img">
         {buildImages()}
       </div>
     </div>

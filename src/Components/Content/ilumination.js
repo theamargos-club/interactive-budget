@@ -1,3 +1,5 @@
+import * as Json from '../../utils/jsonMaps'
+
 import React, { useContext, useEffect, useState } from 'react';
 
 import { AppContext } from '../../storage/reducers';
@@ -15,7 +17,7 @@ const Ilumination = () => {
     const [jsonImg, setJsonImg] = useState([])
 
     useEffect(() => {
-        setJsonImg(buildJsonImage())
+        setJsonImg(Json.jsonImg)
     }, [])
 
     const onChange = e => {
@@ -24,6 +26,7 @@ const Ilumination = () => {
         let jsonUpdate = []
         if (e.target.id.toString() === "1") {
             setNumberZones(value)
+            setJsonInputs([])
             jsonBuild = buildJson(value)
         }
         
@@ -47,15 +50,16 @@ const Ilumination = () => {
             if (check && i === 0){
                 data.push({ id: count, title: "Nombre de Zona " + numZone, isHidden: false, value: "", type: "input" })
                 check = false;
+                numZone++;
             } else if (check && i !== 0){
                 data.push({ id: count, title: "Nombre de Zona " + numZone, isHidden: true, value: "", type: "input" })
                 check = false;
+                numZone++;
             } else if (!check){
                 data.push({ id: count, title: "Cantidad de Circuitos", isHidden: true, value: "", type: "input" })
                 check = true;
             }
             count++;
-            numZone++;
         }
         data.push({ id: count, title: "Seleccione el tipo de interruptor que desee:", isHidden: true, value: "", type: "image" })
         return data;
@@ -64,15 +68,6 @@ const Ilumination = () => {
     const onClick = e => {
         dispatch(updateBudget(e.target.id))
     }
-
-    const buildJsonImage = () => {
-        let jsonResponse = []
-        jsonResponse.push({id:"rb1", title: "Entry Level US$50.00-US$100.00 x interruptor", imgSrc:"https://i.ibb.co/fHjpytX/src1.png"})
-        jsonResponse.push({id:"rb2", title: "Mid Level US$100-US$150 x interruptor", imgSrc: "https://i.ibb.co/8N787p4/src2.png"})
-        jsonResponse.push({id:"rb3", title: "Mid Level US$150.00-US$350.00 x interruptor", imgSrc: "https://i.ibb.co/qdXdxTz/src3.png"})
-        return jsonResponse;
-    }
-
 
     const renderOptions = () => {
         return jsonInputs.map((item) => {
