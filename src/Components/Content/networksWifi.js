@@ -7,12 +7,12 @@ import InputCustom from './inputCustom';
 import _ from 'lodash';
 import { updateBudget } from '../../storage/actions';
 
-const Ilumination = () => {
+const MultizoneAudio = () => {
 
     const { dispatch } = useContext(AppContext);
 
     const [jsonInputs, setJsonInputs] = useState([])
-    const [inputImg, setInputImg] = useState([])
+    const [showImg, setShowImg] = useState(false)
 
     const onChange = e => {
         let value = e.target.value
@@ -23,7 +23,7 @@ const Ilumination = () => {
                 jsonUpdate = setValue(buildJson(value), next, value)
             else
                 jsonUpdate = []
-            setInputImg([])
+            setShowImg(false)
         } else
             jsonUpdate = setValue(jsonInputs, next, value)
         setJsonInputs(jsonUpdate)
@@ -43,28 +43,22 @@ const Ilumination = () => {
         return jsonUpdate
     }
 
-    const showInputImg = (length) => {
-        setInputImg({ id: (length + 1), title: "Seleccione el tipo de interruptor que desee:", isHidden: false })
-    }
+    const showInputImg = () =>
+        setShowImg(true)
 
 
-    const buildJson = numberZones => {
-        let numZone = 1;
-        let autoIndex = 1;
-        let data = [];
-        for (let i = 0; i < numberZones; i++) {
-            autoIndex = autoIndex + 1;
-            data.push({ id: autoIndex, title: "Nombre de Zona " + numZone, isHidden: i === 0 ? false : true, value: "" })
-            autoIndex = autoIndex + 1;
-            data.push({ id: autoIndex, title: "Cantidad de Circuitos", isHidden: true, value: "" })
-            numZone++;
-        }
+    const buildJson = () => {
+        let data = []
+        let autoIndex = 2;
+        data.push({ id: autoIndex, title: "Cantidad de areas communes (sala, comedor, balcon, pasillo, studio, etc)  ", isHidden: false, value: "" })
+        autoIndex = autoIndex + 1;
+        data.push({ id: autoIndex, title: "Metraje de la propiedad (puede ser estimado sino lo conce) ", isHidden: true, value: "" })
         return data;
     }
 
     const mapInputs = () => {
         return jsonInputs.map((item) => {
-            return !item.isHidden && <InputCustom key={item.id} item={item} fnEvent={onChange} type="input" />
+            return !item.isHidden && <InputCustom key={item.id} item={item} fnEvent={onChange} type="input" />
         })
     }
 
@@ -74,11 +68,11 @@ const Ilumination = () => {
 
     return (
         <div>
-            <InputCustom item={Json.headerIlumination} fnEvent={onChange} type="input" />
+            <InputCustom item={Json.headerNetworksWifi} fnEvent={onChange} type="input" />
             {jsonInputs.length !== 0 && mapInputs()}
-            {inputImg.length !== 0 && <InputCustom item={inputImg} jsonImg={Json.jsonImgIlumination} fnEvent={onClick} type="img" />}
+            {showImg && <InputCustom jsonImg={Json.jsonImgNetworksWifi} fnEvent={onClick} type="img" checkBoxImg={false} />}
         </div>
     );
 }
 
-export default Ilumination;
+export default MultizoneAudio;

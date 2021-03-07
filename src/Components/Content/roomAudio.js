@@ -7,12 +7,13 @@ import InputCustom from './inputCustom';
 import _ from 'lodash';
 import { updateBudget } from '../../storage/actions';
 
-const Ilumination = () => {
+const RoomAudio = () => {
 
     const { dispatch } = useContext(AppContext);
 
     const [jsonInputs, setJsonInputs] = useState([])
     const [inputImg, setInputImg] = useState([])
+
 
     const onChange = e => {
         let value = e.target.value
@@ -43,21 +44,14 @@ const Ilumination = () => {
         return jsonUpdate
     }
 
-    const showInputImg = (length) => {
-        setInputImg({ id: (length + 1), title: "Seleccione el tipo de interruptor que desee:", isHidden: false })
-    }
-
-
-    const buildJson = numberZones => {
-        let numZone = 1;
+    const buildJson = numberRooms => {
+        let numRoom = 1;
         let autoIndex = 1;
         let data = [];
-        for (let i = 0; i < numberZones; i++) {
+        for (let i = 0; i < numberRooms; i++) {
             autoIndex = autoIndex + 1;
-            data.push({ id: autoIndex, title: "Nombre de Zona " + numZone, isHidden: i === 0 ? false : true, value: "" })
-            autoIndex = autoIndex + 1;
-            data.push({ id: autoIndex, title: "Cantidad de Circuitos", isHidden: true, value: "" })
-            numZone++;
+            data.push({ id: autoIndex, title: "Nombre de Habitación " + numRoom, isHidden: i === 0 ? false : true, value: "" })
+            numRoom++;
         }
         return data;
     }
@@ -68,17 +62,23 @@ const Ilumination = () => {
         })
     }
 
+
+    const showInputImg = (length) => {
+        setInputImg({ id: (length + 1), title: "Seleccione el tipo de bocina que desee:", isHidden: false })
+    }
+
     const onClick = e => {
         dispatch(updateBudget(e.target.id))
     }
 
     return (
         <div>
-            <InputCustom item={Json.headerIlumination} fnEvent={onChange} type="input" />
+            <InputCustom item={Json.headerRoomAudio} fnEvent={onChange} type="input" />
             {jsonInputs.length !== 0 && mapInputs()}
-            {inputImg.length !== 0 && <InputCustom item={inputImg} jsonImg={Json.jsonImgIlumination} fnEvent={onClick} type="img" />}
+            {inputImg.length !== 0 && <InputCustom item={inputImg} jsonImg={Json.jsonImgRoomAudio} fnEvent={onClick} type="img" />}
         </div>
     );
+
 }
 
-export default Ilumination;
+export default RoomAudio;

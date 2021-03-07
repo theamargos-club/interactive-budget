@@ -13,10 +13,10 @@ const SectionWizard = () => {
     const buildOptions = () => {
         return Json.jsonOptions.map(item => {
             if (state.page === item.page && item.option === null) {
-                return <SectionWizzard content={item.component} />
+                return <SectionWizzard key={item.page} content={item.component} />
             }
             if (state.page === item.page && item.option === state.option) {
-                return <SectionWizzard content={item.component} />
+                return <SectionWizzard key={item.page} content={item.component} />
             }
         })
     }

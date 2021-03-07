@@ -22,7 +22,7 @@ const SectionWizard = ({ content }) => {
       phone: state.phone,
       budget: state.budget
     }
-    alert(data)
+    alert(JSON.stringify(data))
   }
 
   return (
