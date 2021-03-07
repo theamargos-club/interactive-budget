@@ -75,7 +75,7 @@ const RoomAudio = () => {
         <div>
             <InputCustom item={Json.headerRoomAudio} fnEvent={onChange} type="input" />
             {jsonInputs.length !== 0 && mapInputs()}
-            {inputImg.length !== 0 && <InputCustom item={inputImg} jsonImg={Json.jsonImgRoomAudio} fnEvent={onClick} type="img" />}
+            {inputImg.length !== 0 && <InputCustom item={inputImg} jsonImg={Json.jsonImgRoomAudio} fnEvent={onClick} type="img" checkBoxImg={true}/>}
         </div>
     );
 

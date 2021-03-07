@@ -76,7 +76,7 @@ const Ilumination = () => {
         <div>
             <InputCustom item={Json.headerIlumination} fnEvent={onChange} type="input" />
             {jsonInputs.length !== 0 && mapInputs()}
-            {inputImg.length !== 0 && <InputCustom item={inputImg} jsonImg={Json.jsonImgIlumination} fnEvent={onClick} type="img" />}
+            {inputImg.length !== 0 && <InputCustom item={inputImg} jsonImg={Json.jsonImgIlumination} fnEvent={onClick} type="img" checkBoxImg={true}/>}
         </div>
     );
 }

@@ -21,7 +21,7 @@ const MovieHome = () => {
 
     return (
         <div>
-            <InputCustom key="1" item={showInputImg()} jsonImg={Json.jsonImgMovieHome} fnEvent={onClick} type="img" />
+            <InputCustom key="1" item={showInputImg()} jsonImg={Json.jsonImgMovieHome} fnEvent={onClick} type="img" checkBoxImg={true}/>
         </div>
     );
 }

@@ -75,7 +75,7 @@ const MultizoneAudio = () => {
         <div>
             <InputCustom item={Json.headerMultizoneAudio} fnEvent={onChange} type="input" />
             {jsonInputs.length !== 0 && mapInputs()}
-            {inputImg.length !== 0 && <InputCustom item={inputImg} jsonImg={Json.jsonImgMultizoneAudio} fnEvent={onClick} type="img" />}
+            {inputImg.length !== 0 && <InputCustom item={inputImg} jsonImg={Json.jsonImgMultizoneAudio} fnEvent={onClick} type="img" checkBoxImg={true}/>}
         </div>
     );
 
