@@ -7,7 +7,7 @@ import InputCustom from './inputCustom';
 import _ from 'lodash';
 import { updateBudget } from '../../storage/actions';
 
-const NetworkWifi = () => {
+const HomeDesign = () => {
 
     const { dispatch } = useContext(AppContext);
 
@@ -75,4 +75,4 @@ const NetworkWifi = () => {
     );
 }
 
-export default NetworkWifi;
+export default HomeDesign;

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { updateOption, updatePage } from '../../storage/actions';
+import { updateLastPage, updatePage } from '../../storage/actions';
 
 import { AppContext } from '../../storage/reducers';
 
@@ -8,11 +8,16 @@ const SectionWizard = ({ content }) => {
 
   const onPreviousPage = () => {
     dispatch(updatePage(state.page - 1))
-    dispatch(updateOption(1))
   }
 
   const onNextPage = () => {
-    dispatch(updatePage(state.page + 1))
+    if(state.page === 2 && state.options.length === 0){
+      alert("Para continuar debe seleccionar al menos 1 opción")
+    } else {
+      dispatch(updatePage(state.page + 1))
+      let check = ((Number(state.page) + Number(state.options.length)) < state.last_page)
+      check && dispatch(updateLastPage(state.last_page + 1))
+    }
   }
 
   const onFinish = () => {
@@ -35,12 +40,12 @@ const SectionWizard = ({ content }) => {
           </div>
         }
         {
-          state.page < 3 && <div className="margin-btn">
+          state.page < state.last_page && <div className="margin-btn">
             <button type="button" className="btn btn-primary" onClick={onNextPage}>Siguiente</button>
           </div>
         }
         {
-          state.page === 3 && <div className="margin-btn">
+          state.page === state.last_page && <div className="margin-btn">
             <button type="button" className="btn btn-primary" onClick={onFinish}>Finalizar</button>
           </div>
         }

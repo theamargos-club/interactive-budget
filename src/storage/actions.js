@@ -1,6 +1,8 @@
 export const actionTypes = {
   UPDATE_PAGE: "UPDATE_PAGE",
-  UPDATE_OPTION: "UPDATE_OPTION",
+  UPDATE_LAST_PAGE: "UPDATE_LAST_PAGE",
+  UPDATE_OPTIONS: "UPDATE_OPTIONS",
+  SET_JSON_OPTIONS: "SET_JSON_OPTIONS",
   UPDATE_NAME: "UPDATE_NAME",
   UPDATE_EMAIL: "UPDATE_EMAIL",
   UPDATE_PHONE: "UPDATE_PHONE",
@@ -12,8 +14,18 @@ export const updatePage = data => ({
   data
 })
 
-export const updateOption = data => ({
-  type: actionTypes.UPDATE_OPTION,
+export const updateLastPage = data => ({
+  type: actionTypes.UPDATE_LAST_PAGE,
+  data
+})
+
+export const updateOptions = data => ({
+  type: actionTypes.UPDATE_OPTIONS,
+  data
+})
+
+export const setJsonOptions = data => ({
+  type: actionTypes.SET_JSON_OPTIONS,
   data
 })
 

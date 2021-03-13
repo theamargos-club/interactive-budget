@@ -1,66 +1,71 @@
+import Alarm from '../components/Content/alarm';
 import Form from '../components/Form';
+import HomeDesign from '../components/Content/homeDesign';
 import Ilumination from '../components/Content/ilumination';
 import MovieHome from '../components/Content/movieHome';
 import MultizoneAudio from '../components/Content/multizoneAudio';
 import NetworksWifi from '../components/Content/networksWifi';
 import OptionMenu from '../components/OptionMenu';
 import RoomAudio from '../components/Content/roomAudio';
+import ScreenAutomation from '../components/Content/screenAutomation';
+import SecurityCamera from '../components/Content/securityCamera';
 
 export const jsonOptions = [
     {
         "page": 1,
         "component": <Form />,
-        "option": null
     },
     {
         "page": 2,
         "component": <OptionMenu />,
-        "option": null
-    },
+    }
+]
+
+export const jsonComponents = [
     {
-        "page": 3,
+        "page": undefined,
         "component": <Ilumination />,
-        "option": 1
+        "id": 1
     },
     {
-        "page": 3,
+        "page": undefined,
         "component": <MultizoneAudio />,
-        "option": 2
+        "id": 2
     },
     {
-        "page": 3,
+        "page": undefined,
         "component": <RoomAudio />,
-        "option": 3
+        "id": 3
     },
     {
-        "page": 3,
+        "page": undefined,
         "component": <MovieHome />,
-        "option": 4
+        "id": 4
     },
     {
-        "page": 3,
+        "page": undefined,
         "component": <NetworksWifi />,
-        "option": 5
+        "id": 5
     },
     {
-        "page": 3,
-        "component": "Form",
-        "option": 6
+        "page": undefined,
+        "component": <ScreenAutomation />,
+        "id": 6
     },
     {
-        "page": 3,
-        "component": "Form",
-        "option": 7
+        "page": undefined,
+        "component": <Alarm />,
+        "id": 7
     },
     {
-        "page": 3,
-        "component": "Form",
-        "option": 8
+        "page": undefined,
+        "component": <SecurityCamera />,
+        "id": 8
     },
     {
-        "page": 3,
-        "component": "Form",
-        "option": 9
+        "page": undefined,
+        "component": <HomeDesign />,
+        "id": 9
     },
 
 ]
