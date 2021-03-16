@@ -1,0 +1,43 @@
+.content-service{
+    display: flex;
+}
+.width-service{
+    margin: 3%;
+    text-align: center;
+    .title-logo{
+        font-weight: 700;
+    }
+    .active{
+        font-weight: 700;
+        color:#e09900;
+    }
+}
+
+.width-service:hover{
+    .text-align{
+        text-align: center;
+    }
+    .title-logo{
+        font-weight: 700;
+        color:#e09900;
+    }
+    .center-logo{
+        justify-content: center;
+        display: flex;
+    }
+    .img-animation{
+        -webkit-transition: -webkit-transform .8s ease-in-out;
+        -ms-transition: -ms-transform .8s ease-in-out;
+        transition: transform .8s ease-in-out;
+    }
+    .img-animation:hover{
+        transform:rotate(360deg);
+        -ms-transform:rotate(360deg);
+        -webkit-transform:rotate(360deg);
+    }
+}
+
+.center-sv{
+    justify-content: center;
+    display: flex;
+}

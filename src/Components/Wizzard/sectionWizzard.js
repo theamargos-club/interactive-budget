@@ -35,18 +35,18 @@ const SectionWizard = ({ content }) => {
       <div>{content}</div>
       <div className="align-btn">
         {
-          state.page > 1 && <div className="margin-btn">
-            <button type="button" className="btn btn-primary" onClick={onPreviousPage}>Atras</button>
+          state.page > 1 && <div className="padding-btn">
+            <button type="button" className="btn btn-color" onClick={onPreviousPage}>Atras</button>
           </div>
         }
         {
-          state.page < state.last_page && <div className="margin-btn">
-            <button type="button" className="btn btn-primary" onClick={onNextPage}>Siguiente</button>
+          state.page < state.last_page && <div className="padding-btn">
+            <button type="button" className="btn btn-color" onClick={onNextPage}>Siguiente</button>
           </div>
         }
         {
-          state.page === state.last_page && <div className="margin-btn">
-            <button type="button" className="btn btn-primary" onClick={onFinish}>Finalizar</button>
+          state.page === state.last_page && <div className="padding-btn">
+            <button type="button" className="btn btn-color" onClick={onFinish}>Finalizar</button>
           </div>
         }
       </div>

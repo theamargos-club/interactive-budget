@@ -4,6 +4,7 @@ export const AppContext = createContext({});
 
 export const initialState = {
   name: undefined,
+  lastname: undefined,
   email: undefined,
   phone: undefined,
   budget: undefined,
@@ -18,6 +19,9 @@ export const reducer = (state = {}, action) => {
   switch (type) {
     case actionTypes.UPDATE_NAME:
       return { ...state, name: data }
+
+    case actionTypes.UPDATE_LAST_NAME:
+      return { ...state, lastname: data }
 
     case actionTypes.UPDATE_EMAIL:
       return { ...state, email: data }

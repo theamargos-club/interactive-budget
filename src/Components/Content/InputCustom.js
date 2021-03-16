@@ -1,3 +1,5 @@
+import './index.scss';
+
 import React from 'react';
 
 const InputCustom = ({ item, fnEvent, jsonImg, type, checkBoxImg }) => {
@@ -7,7 +9,7 @@ const InputCustom = ({ item, fnEvent, jsonImg, type, checkBoxImg }) => {
       <label>{`${item.id} - ${item.title}`}</label>
       <input
         type="text"
-        className="form-control"
+        className="form-control bg-input"
         placeholder={`Ingrese ${item.title}`}
         name={item.id} id={item.id}
         onChange={fnEvent}

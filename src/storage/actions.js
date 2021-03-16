@@ -4,6 +4,7 @@ export const actionTypes = {
   UPDATE_OPTIONS: "UPDATE_OPTIONS",
   SET_JSON_OPTIONS: "SET_JSON_OPTIONS",
   UPDATE_NAME: "UPDATE_NAME",
+  UPDATE_LAST_NAME: "UPDATE_LAST_NAME",
   UPDATE_EMAIL: "UPDATE_EMAIL",
   UPDATE_PHONE: "UPDATE_PHONE",
   UPDATE_BUDGET: "UPDATE_BUDGET",
@@ -31,6 +32,11 @@ export const setJsonOptions = data => ({
 
 export const updateName = data => ({
   type: actionTypes.UPDATE_NAME,
+  data
+})
+
+export const updateLastName = data => ({
+  type: actionTypes.UPDATE_LAST_NAME,
   data
 })
 
