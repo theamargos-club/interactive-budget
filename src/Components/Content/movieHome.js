@@ -1,3 +1,4 @@
+import * as Constants from '../../utils/constants';
 import * as Json from '../../utils/jsonMaps'
 
 import React, { useContext } from 'react';
@@ -20,7 +21,8 @@ const MovieHome = () => {
     }
 
     return (
-        <div>
+        <div className="inputs-container">
+            <div className="title-center"><h3>{Constants.titleMovieHome}</h3></div>
             <InputCustom key="1" item={showInputImg()} jsonImg={Json.jsonImgMovieHome} fnEvent={onClick} type="img" checkBoxImg={true}/>
         </div>
     );

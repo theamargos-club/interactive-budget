@@ -1,15 +1,27 @@
 .content-service{
     display: flex;
 }
-.width-service{
-    margin: 3%;
+.title-center{
     text-align: center;
+}
+.width-service{
+    width: 100%;
+    text-align: center;
+    .box{
+        display: flex;
+        justify-content: center;
+    }
     .title-logo{
         font-weight: 700;
+        margin-right: 5px;
     }
     .active{
         font-weight: 700;
         color:#e09900;
+    }
+    .title-icon{
+    display: flex;
+    justify-content: center;
     }
 }
 
@@ -20,6 +32,7 @@
     .title-logo{
         font-weight: 700;
         color:#e09900;
+        margin-right: 5px;
     }
     .center-logo{
         justify-content: center;

@@ -5,7 +5,7 @@ import React from 'react';
 const InputCustom = ({ item, fnEvent, jsonImg, type, checkBoxImg }) => {
 
   const typeInput = () => {
-    return (<div>
+    return (<div className={item.id !== 1 && "input-css"}>
       <label>{`${item.id} - ${item.title}`}</label>
       <input
         type="text"
@@ -18,8 +18,8 @@ const InputCustom = ({ item, fnEvent, jsonImg, type, checkBoxImg }) => {
   }
 
   const typeImg = () => {
-    return <div>
-      {item && <label>{`${item.id} - ${item.title}`}</label>}
+    return <div className="img-content">
+      {item && <div><label>{`${item.id} - ${item.title}`}</label></div>}
       {jsonImg.map(img => {
         return (
           <div key={img.id} className="img">
@@ -27,7 +27,7 @@ const InputCustom = ({ item, fnEvent, jsonImg, type, checkBoxImg }) => {
               <img alt="CustomImage" src={img.imgSrc} className="img-width" />
             </div>
             { checkBoxImg && <div>
-              <input type="radio" id={img.id} name="radio" onClick={e => fnEvent(e)} />
+              <input className="margin-rb" type="radio" id={img.id} name="radio" onClick={e => fnEvent(e)} />
               {img.title}
             </div>}
           </div >)
@@ -37,7 +37,7 @@ const InputCustom = ({ item, fnEvent, jsonImg, type, checkBoxImg }) => {
 
   return (
     <div>
-      {type === "input" ? typeInput() : typeImg()}
+      {type === "input" ? typeInput(): typeImg()}
     </div>
   );
 }

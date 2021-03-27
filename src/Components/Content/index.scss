@@ -1,13 +1,18 @@
-.content-img {
-  display: flex;
+.img-content{
+  display: inline-block;
 }
 .img {
   margin: 1%;
-  width: 33%;
+  width: 30%;
+  float: left;
 }
 
 .img-width {
   width: 100%;
+}
+
+.margin-rb{
+  margin-right: 2%;
 }
 
 .center-div {
@@ -17,4 +22,14 @@
 
 .bg-input {
   background-color: #f7f7f7;
+  width: 99%;
+}
+
+.input-css{
+  width: 50%;
+  float: left;
+}
+
+.inputs-container{
+  overflow: hidden;
 }

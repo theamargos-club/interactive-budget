@@ -7,16 +7,25 @@ const SectionWizard = ({ content }) => {
   const { state, dispatch } = useContext(AppContext);
 
   const onPreviousPage = () => {
+    resetOptions()
     dispatch(updatePage(state.page - 1))
   }
 
   const onNextPage = () => {
+    resetOptions()
     if(state.page === 2 && state.options.length === 0){
       alert("Para continuar debe seleccionar al menos 1 opción")
     } else {
       dispatch(updatePage(state.page + 1))
       let check = ((Number(state.page) + Number(state.options.length)) < state.last_page)
       check && dispatch(updateLastPage(state.last_page + 1))
+    }
+  }
+
+  const resetOptions = () => {
+    if(state.options.length === 0){
+      dispatch(updatePage(2))
+      dispatch(updateLastPage(2))
     }
   }
 

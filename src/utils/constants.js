@@ -1,0 +1,9 @@
+export const titleIlumination = "Control de iluminación";
+export const titleMultizoneAudio = "Audio Multizonas";
+export const titleRoomAudio = "Audio habitaciones y control TV";
+export const titleMovieHome = "Cine en Casa";
+export const titleNetworksWifi = "Sistema Wifi y Redes";
+export const titleScreenAutomation = "Cortinas Automatizadas";
+export const titleSecurityCamera = "Camaras de Seguridad";
+export const titleAlarm = "Alarmas";
+export const titleHomeDesign = "Servicio de diseño y preinstalación domótica";

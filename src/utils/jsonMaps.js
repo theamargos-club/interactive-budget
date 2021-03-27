@@ -54,12 +54,12 @@ export const jsonComponents = [
     },
     {
         "page": undefined,
-        "component": <Alarm />,
+        "component": <SecurityCamera />,
         "id": 7
     },
     {
         "page": undefined,
-        "component": <SecurityCamera />,
+        "component": <Alarm />,
         "id": 8
     },
     {
@@ -73,7 +73,7 @@ export const jsonComponents = [
 export const headerIlumination =
 {
     "id": 1,
-    "title": "Cantidad de zonas",
+    "title": "Cantidad de Zonas",
     "type": "input"
 }
 

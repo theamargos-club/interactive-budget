@@ -1,3 +1,4 @@
+import * as Constants from '../../utils/constants';
 import * as Json from '../../utils/jsonMaps'
 
 import React, { useContext, useState } from 'react';
@@ -72,7 +73,8 @@ const MultizoneAudio = () => {
     }
 
     return (
-        <div>
+        <div className="inputs-container">
+            <div className="title-center"><h3>{Constants.titleMultizoneAudio}</h3></div>
             <InputCustom item={Json.headerMultizoneAudio} fnEvent={onChange} type="input" />
             {jsonInputs.length !== 0 && mapInputs()}
             {inputImg.length !== 0 && <InputCustom item={inputImg} jsonImg={Json.jsonImgMultizoneAudio} fnEvent={onClick} type="img" checkBoxImg={true}/>}

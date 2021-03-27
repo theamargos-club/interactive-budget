@@ -1,3 +1,4 @@
+import * as Constants from '../../utils/constants';
 import * as Json from '../../utils/jsonMaps'
 
 import React, { useContext, useState } from 'react';
@@ -67,7 +68,8 @@ const NetworkWifi = () => {
     }
 
     return (
-        <div>
+        <div className="inputs-container">
+            <div className="title-center"><h3>{Constants.titleNetworksWifi}</h3></div>
             <InputCustom item={Json.headerNetworksWifi} fnEvent={onChange} type="input" />
             {jsonInputs.length !== 0 && mapInputs()}
             {showImg && <InputCustom jsonImg={Json.jsonImgNetworksWifi} fnEvent={onClick} type="img" checkBoxImg={false} />}

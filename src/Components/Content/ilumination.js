@@ -1,3 +1,4 @@
+import * as Constants from '../../utils/constants'
 import * as Json from '../../utils/jsonMaps'
 
 import React, { useContext, useState } from 'react';
@@ -64,7 +65,7 @@ const Ilumination = () => {
 
     const mapInputs = () => {
         return jsonInputs.map((item) => {
-            return !item.isHidden && <InputCustom key={item.id} item={item} fnEvent={onChange} type="input" />
+            return !item.isHidden && <InputCustom key={item.id} item={item} fnEvent={onChange} type="input" />
         })
     }
 
@@ -73,10 +74,13 @@ const Ilumination = () => {
     }
 
     return (
-        <div>
-            <InputCustom item={Json.headerIlumination} fnEvent={onChange} type="input" />
-            {jsonInputs.length !== 0 && mapInputs()}
-            {inputImg.length !== 0 && <InputCustom item={inputImg} jsonImg={Json.jsonImgIlumination} fnEvent={onClick} type="img" checkBoxImg={true}/>}
+        <div className="inputs-container">
+            <div className="title-center"><h3>{Constants.titleIlumination}</h3></div>
+            <div>
+                <InputCustom item={Json.headerIlumination} fnEvent={onChange} type="input" />
+                {jsonInputs.length !== 0 && mapInputs()}
+            </div>
+            <div>{inputImg.length !== 0 && <InputCustom item={inputImg} jsonImg={Json.jsonImgIlumination} fnEvent={onClick} type="img" checkBoxImg={true} />}</div>
         </div>
     );
 }
