@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/interactive-budget/static/css/main.69b6bb2d.chunk.css",
-    "main.js": "/interactive-budget/static/js/main.02d74e06.chunk.js",
-    "main.js.map": "/interactive-budget/static/js/main.02d74e06.chunk.js.map",
+    "main.css": "/interactive-budget/static/css/main.31d20667.chunk.css",
+    "main.js": "/interactive-budget/static/js/main.f224234f.chunk.js",
+    "main.js.map": "/interactive-budget/static/js/main.f224234f.chunk.js.map",
     "runtime-main.js": "/interactive-budget/static/js/runtime-main.d37e5021.js",
     "runtime-main.js.map": "/interactive-budget/static/js/runtime-main.d37e5021.js.map",
-    "static/js/2.2ddaf2b7.chunk.js": "/interactive-budget/static/js/2.2ddaf2b7.chunk.js",
-    "static/js/2.2ddaf2b7.chunk.js.map": "/interactive-budget/static/js/2.2ddaf2b7.chunk.js.map",
+    "static/js/2.0136c02c.chunk.js": "/interactive-budget/static/js/2.0136c02c.chunk.js",
+    "static/js/2.0136c02c.chunk.js.map": "/interactive-budget/static/js/2.0136c02c.chunk.js.map",
     "index.html": "/interactive-budget/index.html",
-    "static/css/main.69b6bb2d.chunk.css.map": "/interactive-budget/static/css/main.69b6bb2d.chunk.css.map",
-    "static/js/2.2ddaf2b7.chunk.js.LICENSE.txt": "/interactive-budget/static/js/2.2ddaf2b7.chunk.js.LICENSE.txt"
+    "static/css/main.31d20667.chunk.css.map": "/interactive-budget/static/css/main.31d20667.chunk.css.map",
+    "static/js/2.0136c02c.chunk.js.LICENSE.txt": "/interactive-budget/static/js/2.0136c02c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d37e5021.js",
-    "static/js/2.2ddaf2b7.chunk.js",
-    "static/css/main.69b6bb2d.chunk.css",
-    "static/js/main.02d74e06.chunk.js"
+    "static/js/2.0136c02c.chunk.js",
+    "static/css/main.31d20667.chunk.css",
+    "static/js/main.f224234f.chunk.js"
   ]
 }
